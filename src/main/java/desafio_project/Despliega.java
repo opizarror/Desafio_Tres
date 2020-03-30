@@ -32,7 +32,6 @@ public class Despliega {
 			Ufs	rangosUF = valoresRango.getRango();
 			Set<Uf>	ufsRangosValores = rangosUF.getUfs();
 
-
 			//obtener listado de clase Datos con el rango de getRango para que retorne el rango sin lagunas
 			DatosUf listadoDatos = DatosUf.getInstance();//retorna desde 1 Ene 2010 - 31 Dic 2014
 			List<Uf> filterDatosUfs = listadoDatos.getUfs(rangosUF.getInicio(), rangosUF.getFin());
@@ -55,7 +54,6 @@ public class Despliega {
 			String strDateI = dateFormat.format(rangosUF.getInicio());
 			String strDateF = dateFormat.format(rangosUF.getFin());
 
-
 			//Se itera el listado para asignar cada dato al nuevo ArrayList con los nombres de atributos nuevos 
 			Iterator<Uf> iteratorValores = rangoUfsOrderList.iterator(); 
 			List <UFs> UFsList = new ArrayList<UFs>();
@@ -63,6 +61,7 @@ public class Despliega {
 			rangosUFs.setInicio(strDateI);
 			rangosUFs.setFin(strDateF);
 
+			//se itera la lista para obtener valores de UF y Fecha y asignarlos a los nuevos nombres de atributos
 			int acum = 0;
 			while (iteratorValores.hasNext() && acum<LIMIT_LIST) {
 				acum = acum + 1;
